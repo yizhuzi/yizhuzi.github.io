@@ -98,7 +98,7 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>妈耶这玩意…绝了…<br>需要用读卡器来给SD卡烧录程序w….有空整一个<br>用手机试过了，不识别就很难受…<br>这里需要两个软件，用来彻底格式化SD卡的SD Card Formatter和用来烧录的DiskImager…<br>烧录的玩意在树莓派官网<a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">https://www.raspberrypi.org/downloads/raspbian/</a><br>找凉凉借了个SD卡读卡器…直接插上插电脑<br>拿那俩软件过一遍，无脑YES<br>打开boot<br>新建ssh文件夹<br>新建wpa_supplicant.conf文件<br>键入<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=&quot;zhuzi&quot;</span><br><span class="line">    psk=&quot;123457890&quot;</span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    priority=1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>妈耶这玩意…绝了…<br>需要用读卡器来给SD卡烧录程序w….有空整一个<br>用手机试过了，不识别就很难受…<br>这里需要两个软件，用来彻底格式化SD卡的SD Card Formatter和用来烧录的DiskImager…<br>烧录的玩意在树莓派官网<a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">https://www.raspberrypi.org/downloads/raspbian/</a><br>找凉凉借了个SD卡读卡器…直接插上插电脑<br>拿那俩软件过一遍，无脑YES<br>打开boot<br>新建ssh文件夹<br>新建wpa_supplicant.conf文件<br>键入<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=&quot;zhuzi&quot;</span><br><span class="line">    psk=&quot;123457890&quot;</span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    priority=1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
 <p>这部分建议参考此教程<a href="http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html" target="_blank" rel="noopener">http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html</a><br>值得注意的是这玩意连接不了5G的WIFI，我一开始捣鼓了半天。。。<br>接下来是SSH连接树莓派的部分…先下个<a href="https://www.putty.org/" target="_blank" rel="noopener">https://www.putty.org/</a><br>手机开个热点，账号zhuzi密码123457890(就上面写那个…<br>树莓派插SD卡，通电，笔记本也连上热点，手机这边看见有个叫raspberrypi的设备连接的话就成功了<br>然后电脑打开putty,IP填写树莓派的ip,账号pi密码raspberry如果弹出绿色的pi@raspberrypi就说明连接成功<br>接下来整LCD屏幕…我这里用的3.5的LCD屏，参考教程<a href="https://www.jianshu.com/p/a159258ee155" target="_blank" rel="noopener">https://www.jianshu.com/p/a159258ee155</a><br>以下懒得写了，略<br>好了，成功了，有了屏幕就简单多了</p>
 
       
@@ -114,6 +114,15 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
+      <a href="/2019/09/01/2019摸鱼大创记录/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            2019摸鱼大创记录
+          
+        </div>
+      </a>
+    
   </div>
   <div class="article-nav-block">
     
@@ -128,7 +137,7 @@
     
 <div id="gitmentContainer"></div>
 <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
   owner: 'yizhuzi',
@@ -175,7 +184,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -187,6 +196,14 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/09/13/2019数学建模国赛记录/">2019数学建模国赛记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/01/2019摸鱼大创记录/">2019摸鱼大创记录</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/21/小白竹的树莓派练习笔记-1/">小白竹的树莓派练习笔记&lt;1&gt;</a>
           </li>
         
@@ -196,14 +213,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/04/22/电路复习记录/">电路的复习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/21/基于单片机的宿舍二氧化碳浓度测量/">基于单片机的宿舍二氧化碳浓度测量</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/20/2019年电赛摸鱼记录/">2019年电赛摸鱼记录</a>
           </li>
         
       </ul>

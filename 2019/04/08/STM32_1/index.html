@@ -98,7 +98,7 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>啊啊啊啊啊啊啊啊啥玩意啊这是<br>捋一捋，目前存在的问题有：<br>1.STM32无法被J-link识别<br>2.LCD_ShowNum (30,150,x,200,30);无法正常显示数字<br>3.main.c(51): warning:  #167-D: argument of type “char <em>“ is incompatible with parameter of type “u8 </em>“<br>4.u8疑似无法搞中文的问题…<br>敲里吗…开始着手解决问题吧，想瞅瞅这个u8是个啥玩意<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8是unsigned char</span><br><span class="line">u16是unsigned short</span><br><span class="line">u32是unsigned int</span><br></pre></td></tr></table></figure></p>
+        <p>啊啊啊啊啊啊啊啊啥玩意啊这是<br>捋一捋，目前存在的问题有：<br>1.STM32无法被J-link识别<br>2.LCD_ShowNum (30,150,x,200,30);无法正常显示数字<br>3.main.c(51): warning:  #167-D: argument of type “char <em>“ is incompatible with parameter of type “u8 </em>“<br>4.u8疑似无法搞中文的问题…<br>敲里吗…开始着手解决问题吧，想瞅瞅这个u8是个啥玩意<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8是unsigned char</span><br><span class="line">u16是unsigned short</span><br><span class="line">u32是unsigned int</span><br></pre></td></tr></table></figure></div></p>
 <p>……懂了，顶算这玩意本来就不是字符串…拿看来解决问题的话，要么研究下汉字编码，要么去翻翻头文件…（好像是废话<br>果然头文件LCD.h中有我想看的东西…<br>void LCD_ShowString(u16 x,u16 y,u16 width,u16 height,u8 size,u8 *p);        //显示一个字符串,12/16字体<br>不说了先试试去(。・∀・)ノ<br>…巧丽吗刚刚发现这个字符串也是u8类型…<br>void LCD_Fast_DrawPoint(u16 x,u16 y,u16 color);                                //快速画点<br>还好有这玩意，有空自己整一个汉字输出的吧QAQ<br><a href="https://blog.csdn.net/skyliu1234/article/details/5444955先mark下，有空研究下" target="_blank" rel="noopener">https://blog.csdn.net/skyliu1234/article/details/5444955先mark下，有空研究下</a></p>
 
       
@@ -137,7 +137,7 @@
     
 <div id="gitmentContainer"></div>
 <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
   owner: 'yizhuzi',
@@ -184,7 +184,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -196,6 +196,14 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/09/13/2019数学建模国赛记录/">2019数学建模国赛记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/01/2019摸鱼大创记录/">2019摸鱼大创记录</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/21/小白竹的树莓派练习笔记-1/">小白竹的树莓派练习笔记&lt;1&gt;</a>
           </li>
         
@@ -205,14 +213,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/04/22/电路复习记录/">电路的复习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/21/基于单片机的宿舍二氧化碳浓度测量/">基于单片机的宿舍二氧化碳浓度测量</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/20/2019年电赛摸鱼记录/">2019年电赛摸鱼记录</a>
           </li>
         
       </ul>
