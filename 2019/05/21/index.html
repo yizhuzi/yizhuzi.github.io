@@ -5,22 +5,22 @@
   
 
   
-  <title>基于单片机的宿舍二氧化碳浓度测量 | 竹子的大结界</title>
+  <title>小白竹的树莓派练习笔记&lt;1&gt; | 竹子的大结界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="单片机：STM32F103传感器：SGP30脑洞来源：喵姐讲许逸风这傻孩子天天睡到下午可能和宿舍内的二氧化碳浓度有关…反正闲着也是闲着，不如做个实验测测宿舍二氧化碳的浓度变化目标：1.整一个能检测二氧化碳浓度并上传到串口的玩意2.想办法把这玩意搞得可用3.研究一下这玩意的源码原理，并顺便恶补下有关的单片机知识4….暂未定·········竹竹的奇妙分割线首先是串口通讯，这玩意还没学过，看来要恶补下">
+  <meta name="description" content="妈耶这玩意…绝了…需要用读卡器来给SD卡烧录程序w….有空整一个用手机试过了，不识别就很难受…这里需要两个软件，用来彻底格式化SD卡的SD Card Formatter和用来烧录的DiskImager…烧录的玩意在树莓派官网https://www.raspberrypi.org/downloads/raspbian/找凉凉借了个SD卡读卡器…直接插上插电脑拿那俩软件过一遍，无脑YES打开boot新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于单片机的宿舍二氧化碳浓度测量">
-<meta property="og:url" content="http://yizhuzi.github.io/2019/04/21/基于单片机的宿舍二氧化碳浓度测量/index.html">
+<meta property="og:title" content="小白竹的树莓派练习笔记&lt;1&gt;">
+<meta property="og:url" content="http://yizhuzi.github.io/2019/05/21/index.html">
 <meta property="og:site_name" content="竹子的大结界">
-<meta property="og:description" content="单片机：STM32F103传感器：SGP30脑洞来源：喵姐讲许逸风这傻孩子天天睡到下午可能和宿舍内的二氧化碳浓度有关…反正闲着也是闲着，不如做个实验测测宿舍二氧化碳的浓度变化目标：1.整一个能检测二氧化碳浓度并上传到串口的玩意2.想办法把这玩意搞得可用3.研究一下这玩意的源码原理，并顺便恶补下有关的单片机知识4….暂未定·········竹竹的奇妙分割线首先是串口通讯，这玩意还没学过，看来要恶补下">
+<meta property="og:description" content="妈耶这玩意…绝了…需要用读卡器来给SD卡烧录程序w….有空整一个用手机试过了，不识别就很难受…这里需要两个软件，用来彻底格式化SD卡的SD Card Formatter和用来烧录的DiskImager…烧录的玩意在树莓派官网https://www.raspberrypi.org/downloads/raspbian/找凉凉借了个SD卡读卡器…直接插上插电脑拿那俩软件过一遍，无脑YES打开boot新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-04T05:26:01.699Z">
+<meta property="og:updated_time" content="2019-05-22T08:12:05.053Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于单片机的宿舍二氧化碳浓度测量">
-<meta name="twitter:description" content="单片机：STM32F103传感器：SGP30脑洞来源：喵姐讲许逸风这傻孩子天天睡到下午可能和宿舍内的二氧化碳浓度有关…反正闲着也是闲着，不如做个实验测测宿舍二氧化碳的浓度变化目标：1.整一个能检测二氧化碳浓度并上传到串口的玩意2.想办法把这玩意搞得可用3.研究一下这玩意的源码原理，并顺便恶补下有关的单片机知识4….暂未定·········竹竹的奇妙分割线首先是串口通讯，这玩意还没学过，看来要恶补下">
+<meta name="twitter:title" content="小白竹的树莓派练习笔记&lt;1&gt;">
+<meta name="twitter:description" content="妈耶这玩意…绝了…需要用读卡器来给SD卡烧录程序w….有空整一个用手机试过了，不识别就很难受…这里需要两个软件，用来彻底格式化SD卡的SD Card Formatter和用来烧录的DiskImager…烧录的玩意在树莓派官网https://www.raspberrypi.org/downloads/raspbian/找凉凉借了个SD卡读卡器…直接插上插电脑拿那俩软件过一遍，无脑YES打开boot新">
   
     <link rel="alternate" href="/atom.xml" title="竹子的大结界" type="application/atom+xml">
   
@@ -69,21 +69,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="repo-基于单片机的宿舍二氧化碳浓度测量" class="article global-container article-type-repo" itemscope itemprop="blogPost">
+        <section id="main"><article id="repo-小白竹的树莓派练习笔记-1" class="article global-container article-type-repo" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      基于单片机的宿舍二氧化碳浓度测量
+      小白竹的树莓派练习笔记&lt;1&gt;
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/21/基于单片机的宿舍二氧化碳浓度测量/" class="article-date">
-  <time datetime="2019-04-21T11:29:48.000Z" itemprop="datePublished">2019-04-21</time>
+    <a href="/2019/05/21/" class="article-date">
+  <time datetime="2019-05-21T10:58:41.000Z" itemprop="datePublished">2019-05-21</time>
 </a>
     
     
@@ -98,7 +98,8 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>单片机：STM32F103<br>传感器：SGP30<br>脑洞来源：喵姐讲许逸风这傻孩子天天睡到下午可能和宿舍内的二氧化碳浓度有关…反正闲着也是闲着，不如做个实验测测宿舍二氧化碳的浓度变化<br>目标：<br>1.整一个能检测二氧化碳浓度并上传到串口的玩意<br>2.想办法把这玩意搞得可用<br>3.研究一下这玩意的源码原理，并顺便恶补下有关的单片机知识<br>4….暂未定<br>·········竹竹的奇妙分割线<br>首先是串口通讯，这玩意还没学过，看来要恶补下<br>翻了翻串口实验….搞一下！<br>哭了，这玩意供电在1.5V左右，我先接了5V了半天，现在又接了一阵子3V，感觉这玩意怕不是以及被烧了QAQ<br>啊啊啊啊啊啊啊啊啊<br>先瞅瞅电压转换模块吧。。。这玩意凉了啊</p>
+        <p>妈耶这玩意…绝了…<br>需要用读卡器来给SD卡烧录程序w….有空整一个<br>用手机试过了，不识别就很难受…<br>这里需要两个软件，用来彻底格式化SD卡的SD Card Formatter和用来烧录的DiskImager…<br>烧录的玩意在树莓派官网<a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">https://www.raspberrypi.org/downloads/raspbian/</a><br>找凉凉借了个SD卡读卡器…直接插上插电脑<br>拿那俩软件过一遍，无脑YES<br>打开boot<br>新建ssh文件夹<br>新建wpa_supplicant.conf文件<br>键入<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=&quot;zhuzi&quot;</span><br><span class="line">    psk=&quot;123457890&quot;</span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    priority=1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>这部分建议参考此教程<a href="http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html" target="_blank" rel="noopener">http://shumeipai.nxez.com/2017/09/13/raspberry-pi-network-configuration-before-boot.html</a><br>值得注意的是这玩意连接不了5G的WIFI，我一开始捣鼓了半天。。。<br>接下来是SSH连接树莓派的部分…先下个<a href="https://www.putty.org/" target="_blank" rel="noopener">https://www.putty.org/</a><br>手机开个热点，账号zhuzi密码123457890(就上面写那个…<br>树莓派插SD卡，通电，笔记本也连上热点，手机这边看见有个叫raspberrypi的设备连接的话就成功了<br>然后电脑打开putty,IP填写树莓派的ip,账号pi密码raspberry如果弹出绿色的pi@raspberrypi就说明连接成功<br>接下来整LCD屏幕…我这里用的3.5的LCD屏，参考教程<a href="https://www.jianshu.com/p/a159258ee155" target="_blank" rel="noopener">https://www.jianshu.com/p/a159258ee155</a><br>以下懒得写了，略<br>好了，成功了，有了屏幕就简单多了</p>
 
       
     </div>
@@ -113,11 +114,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/04/22/电路复习记录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/09/01/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            电路的复习总结
+            2019摸鱼大创记录
           
         </div>
       </a>
@@ -125,8 +126,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/04/20/2019年电赛摸鱼记录/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">2019年电赛摸鱼记录</div>
+      <a href="/2019/05/03/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">基于matlab的电磁场求解</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -195,23 +196,23 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/11/05/2019年11月摸鱼记录/">2019年11月摸鱼日经记录</a>
+            <a href="/2019/11/05/">2019年11月摸鱼日经记录</a>
           </li>
         
           <li>
-            <a href="/2019/09/13/2019数学建模国赛记录/">2019数学建模国赛记录</a>
+            <a href="/2019/09/13/">2019数学建模国赛记录</a>
           </li>
         
           <li>
-            <a href="/2019/09/01/2019摸鱼大创记录/">2019摸鱼大创记录</a>
+            <a href="/2019/09/01/">2019摸鱼大创记录</a>
           </li>
         
           <li>
-            <a href="/2019/05/21/小白竹的树莓派练习笔记-1/">小白竹的树莓派练习笔记&lt;1&gt;</a>
+            <a href="/2019/05/21/">小白竹的树莓派练习笔记&lt;1&gt;</a>
           </li>
         
           <li>
-            <a href="/2019/05/03/matlab初体验/">基于matlab的电磁场求解</a>
+            <a href="/2019/05/03/">基于matlab的电磁场求解</a>
           </li>
         
       </ul>

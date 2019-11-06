@@ -5,22 +5,22 @@
   
 
   
-  <title>电路的复习总结 | 竹子的大结界</title>
+  <title>竹子のSTM32苦逼笔记&lt;一&gt; TFTLCD显示篇 | 竹子的大结界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="欢迎来咱的小破结界看看呐">
+  <meta name="description" content="啊啊啊啊啊啊啊啊啥玩意啊这是捋一捋，目前存在的问题有：1.STM32无法被J-link识别2.LCD_ShowNum (30,150,x,200,30);无法正常显示数字3.main.c(51): warning:  #167-D: argument of type “char “ is incompatible with parameter of type “u8 “4.u8疑似无法搞中文的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电路的复习总结">
-<meta property="og:url" content="http://yizhuzi.github.io/2019/04/22/电路复习记录/index.html">
+<meta property="og:title" content="竹子のSTM32苦逼笔记&lt;一&gt; TFTLCD显示篇">
+<meta property="og:url" content="http://yizhuzi.github.io/2019/04/08/index.html">
 <meta property="og:site_name" content="竹子的大结界">
-<meta property="og:description" content="欢迎来咱的小破结界看看呐">
+<meta property="og:description" content="啊啊啊啊啊啊啊啊啥玩意啊这是捋一捋，目前存在的问题有：1.STM32无法被J-link识别2.LCD_ShowNum (30,150,x,200,30);无法正常显示数字3.main.c(51): warning:  #167-D: argument of type “char “ is incompatible with parameter of type “u8 “4.u8疑似无法搞中文的问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-22T11:46:14.065Z">
+<meta property="og:updated_time" content="2019-04-10T09:50:43.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电路的复习总结">
-<meta name="twitter:description" content="欢迎来咱的小破结界看看呐">
+<meta name="twitter:title" content="竹子のSTM32苦逼笔记&lt;一&gt; TFTLCD显示篇">
+<meta name="twitter:description" content="啊啊啊啊啊啊啊啊啥玩意啊这是捋一捋，目前存在的问题有：1.STM32无法被J-link识别2.LCD_ShowNum (30,150,x,200,30);无法正常显示数字3.main.c(51): warning:  #167-D: argument of type “char “ is incompatible with parameter of type “u8 “4.u8疑似无法搞中文的问题">
   
     <link rel="alternate" href="/atom.xml" title="竹子的大结界" type="application/atom+xml">
   
@@ -69,21 +69,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="repo-电路复习记录" class="article global-container article-type-repo" itemscope itemprop="blogPost">
+        <section id="main"><article id="repo-STM32_1" class="article global-container article-type-repo" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      电路的复习总结
+      竹子のSTM32苦逼笔记&lt;一&gt; TFTLCD显示篇
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/04/22/电路复习记录/" class="article-date">
-  <time datetime="2019-04-22T11:29:48.000Z" itemprop="datePublished">2019-04-22</time>
+    <a href="/2019/04/08/" class="article-date">
+  <time datetime="2019-04-07T16:22:22.000Z" itemprop="datePublished">2019-04-08</time>
 </a>
     
     
@@ -98,7 +98,9 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        
+        <p>啊啊啊啊啊啊啊啊啥玩意啊这是<br>捋一捋，目前存在的问题有：<br>1.STM32无法被J-link识别<br>2.LCD_ShowNum (30,150,x,200,30);无法正常显示数字<br>3.main.c(51): warning:  #167-D: argument of type “char <em>“ is incompatible with parameter of type “u8 </em>“<br>4.u8疑似无法搞中文的问题…<br>敲里吗…开始着手解决问题吧，想瞅瞅这个u8是个啥玩意<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u8是unsigned char</span><br><span class="line">u16是unsigned short</span><br><span class="line">u32是unsigned int</span><br></pre></td></tr></table></figure></div></p>
+<p>……懂了，顶算这玩意本来就不是字符串…拿看来解决问题的话，要么研究下汉字编码，要么去翻翻头文件…（好像是废话<br>果然头文件LCD.h中有我想看的东西…<br>void LCD_ShowString(u16 x,u16 y,u16 width,u16 height,u8 size,u8 *p);        //显示一个字符串,12/16字体<br>不说了先试试去(。・∀・)ノ<br>…巧丽吗刚刚发现这个字符串也是u8类型…<br>void LCD_Fast_DrawPoint(u16 x,u16 y,u16 color);                                //快速画点<br>还好有这玩意，有空自己整一个汉字输出的吧QAQ<br><a href="https://blog.csdn.net/skyliu1234/article/details/5444955先mark下，有空研究下" target="_blank" rel="noopener">https://blog.csdn.net/skyliu1234/article/details/5444955先mark下，有空研究下</a></p>
+
       
     </div>
     
@@ -112,11 +114,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/05/03/matlab初体验/" id="article-nav-newer" class="article-nav-link-wrap">
+      <a href="/2019/04/20/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption"></strong>
         <div class="article-nav-title">
           
-            基于matlab的电磁场求解
+            2019年电赛摸鱼记录
           
         </div>
       </a>
@@ -124,8 +126,8 @@
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/04/21/基于单片机的宿舍二氧化碳浓度测量/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">基于单片机的宿舍二氧化碳浓度测量</div>
+      <a href="/2019/04/03/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">基于win服务器的贴吧云签到搭建</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -194,23 +196,23 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/11/05/2019年11月摸鱼记录/">2019年11月摸鱼日经记录</a>
+            <a href="/2019/11/05/">2019年11月摸鱼日经记录</a>
           </li>
         
           <li>
-            <a href="/2019/09/13/2019数学建模国赛记录/">2019数学建模国赛记录</a>
+            <a href="/2019/09/13/">2019数学建模国赛记录</a>
           </li>
         
           <li>
-            <a href="/2019/09/01/2019摸鱼大创记录/">2019摸鱼大创记录</a>
+            <a href="/2019/09/01/">2019摸鱼大创记录</a>
           </li>
         
           <li>
-            <a href="/2019/05/21/小白竹的树莓派练习笔记-1/">小白竹的树莓派练习笔记&lt;1&gt;</a>
+            <a href="/2019/05/21/">小白竹的树莓派练习笔记&lt;1&gt;</a>
           </li>
         
           <li>
-            <a href="/2019/05/03/matlab初体验/">基于matlab的电磁场求解</a>
+            <a href="/2019/05/03/">基于matlab的电磁场求解</a>
           </li>
         
       </ul>
